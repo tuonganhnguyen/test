@@ -14,15 +14,13 @@
 							http://www.springframework.org/schema/util 
 							http://www.springframework.org/schema/util/spring-util.xsd">
  	<context:annotation-config></context:annotation-config>
-    <mvc:annotation-driven>
-    <!-- 	<mvc:message-converters register-defaults="true"> -->
-    <!-- 		< -->
-    <!-- 	</mvc:message-converters> -->
-    </mvc:annotation-driven>
+    
 
-    <context:component-scan base-package="controllers"></context:component-scan>
+    
+    
     <import resource="jobContext.xml"/>
     <import resource="securityContext.xml"/>
+<!--     <import resource="viewContext.xml"/> -->
     
 
 

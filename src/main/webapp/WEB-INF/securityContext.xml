@@ -10,12 +10,19 @@
     <global-method-security >
     </global-method-security>
     <http>
-        <intercept-url pattern="/rest/*" access="hasRole('ROLE_USER')"/>
-        <intercept-url pattern="/**" access="permitAll()"/>
-        <form-login login-page="/index2.html" login-processing-url="/loginTest" password-parameter="pass" username-parameter="user" />
-        <csrf disabled="false" token-repository-ref="" />
+    <intercept-url pattern="/employees/*" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/" access="permitAll()"/>
+        
+        <form-login login-page="/login" password-parameter="pass" username-parameter="user" login-processing-url="/login" default-target-url="/employees/english"/>
+<!--         <csrf disabled="false" token-repository-ref="" /> -->
+        <csrf disabled="false" token-repository-ref="httpSessionTokenRepository"/>
     </http>
     
+    <beans:bean id="httpSessionTokenRepository" class="org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository">
+    </beans:bean>
+    
+<!--     <beans:bean id="memoryTokenRepository" class="org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl"> -->
+<!--     </beans:bean> -->
  
     
     <authentication-manager>

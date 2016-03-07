@@ -43,7 +43,7 @@ public class FileController {
     
     
     public FileController() {
-        System.out.println("File Controller 123");
+        System.out.println("File Controller");
     }
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
